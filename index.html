@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bildergalerie</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <img src="./img/Fotogram_Logo.svg" alt="">
-</header>
+  <header class="site-header">
+    <img src="./img/Fotogram_Logo.svg" alt="Logo der Bildergalerie" class="logo" />
+  </header>
 
-<main>
-
-    <h1>Your Personal Photo album</h1>
-
-    <div> 
-        <img src="./img/hero-image.png" alt="">
-        
+  <main>
 
 
+
+    <div id="PhotoshopTitle">Your personal photo Album</div>
+    
+    
+    
+    
+    <div class="gallery" id="gallery" aria-label="Bildergalerie"></div>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; 2025 – Meine Galerie</small>
+  </footer>
+
+  <!--  HTML-DIALOG als Lightbox -->
+<dialog id="lightbox">
+  <div class="lightbox">
+    <div class="lb-frame">
+      <button class="close" id="closeBtn">✕</button>
+      <button class="nav prev" id="prevBtn">&#10094;</button>
+      <div class="lb-panel">
+        <div class="lb-viewport"><img id="lightboxImg" alt=""></div>
+      </div>
+      <button class="nav next" id="nextBtn">&#10095;</button>
     </div>
-
-</main>
-
-
+  </div>
+</dialog>
 
 
-<footer>
-    <p>&copy; 2023 Fotogram. All rights reserved.</p>
-</footer>
 
+
+  <script src="script.js" defer></script>
 </body>
 </html>
