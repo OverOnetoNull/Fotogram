@@ -1,27 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bildergalerie</title>
+  <meta name="description" content="Barrierearme Bildergalerie mit Lightbox." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header class="site-header">
     <img src="./img/Fotogram_Logo.svg" alt="Logo der Bildergalerie" class="logo" />
   </header>
 
   <main>
-
-
-
-    <div id="PhotoshopTitle">Your personal photo Album</div>
-    
-    
-    
-    
+    <h1 class="PhotoshopTitle">Your personal photo Album</h1>
     <div class="gallery" id="gallery" aria-label="Bildergalerie"></div>
+    <noscript>JavaScript ist deaktiviert – die Lightbox funktioniert dann nicht, aber die Galerie wird angezeigt.</noscript>
   </main>
 
   <footer class="site-footer">
@@ -29,22 +23,24 @@
   </footer>
 
   <!--  HTML-DIALOG als Lightbox -->
-<dialog id="lightbox">
-  <div class="lightbox">
-    <div class="lb-frame">
-      <button class="close" id="closeBtn">✕</button>
-      <button class="nav prev" id="prevBtn">&#10094;</button>
-      <div class="lb-panel">
-        <div class="lb-viewport"><img id="lightboxImg" alt=""></div>
+  <dialog id="lightbox" aria-label="Großansicht">
+    <div class="lightbox">
+      <div class="lb-frame">
+        <button class="close" id="closeBtn" aria-label="Schließen">✕</button>
+        <button class="nav prev" id="prevBtn" aria-label="Vorheriges Bild">&#10094;</button>
+        <div class="lb-panel">
+          <div class="lb-viewport"><img id="lightboxImg" alt=""></div>
+        </div>
+        <button class="nav next" id="nextBtn" aria-label="Nächstes Bild">&#10095;</button>
       </div>
-      <button class="nav next" id="nextBtn">&#10095;</button>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
-
-
-
+  <script>
+    // Fehler schnell sichtbar machen (hilft gegen "unsichtbare" JS-Crashes)
+    window.addEventListener('error', e => console.error('Script error:', e.error || e.message));
+    window.addEventListener('unhandledrejection', e => console.error('Unhandled promise:', e.reason));
+  </script>
   <script src="script.js" defer></script>
 </body>
 </html>
